@@ -2,6 +2,7 @@
 using static Acme.Common.LoggingService;
 using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,21 @@ namespace Acme.Biz
         public Product()
         {
             string[] colorOptions = {"Red", "Green", "Blue", "Alpha"};
-            Console.WriteLine(colorOptions);
+
+            foreach (var colorOption in colorOptions)
+            {
+                Console.WriteLine($"The color is {colorOption}");
+            }
+
+            var rougeIndex = Array.IndexOf(colorOptions, "Red");
+            Console.WriteLine(rougeIndex);
+            
+            colorOptions.SetValue("Green", 1);
+            
+            for (int i = 0; i < colorOptions.Length; i++)
+            {
+                colorOptions[i] = colorOptions[i].ToLower();
+            }
         }
         public Product(int productId,
                         string productName,
