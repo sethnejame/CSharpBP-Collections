@@ -16,11 +16,7 @@ namespace Acme.Biz
         #region Constructors
         public Product()
         {
-            var colorOptions = new string[4];
-            colorOptions[0] = "Red";
-            colorOptions[1] = "Green";
-            colorOptions[2] = "Blue";
-            colorOptions[3] = "Alpha";
+            var colorOptions = new string[4] {"Red", "Green", "Blue", "Alpha"};
             Console.WriteLine(colorOptions);
         }
         public Product(int productId,
