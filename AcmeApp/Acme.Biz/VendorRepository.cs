@@ -42,5 +42,11 @@ namespace Acme.Biz
 
             return success;
         }
+
+        public T RetrieveValue<T>(string sql, T defaultValue)
+        {
+            T value = defaultValue;
+            return value;
+        }
     }
 }
