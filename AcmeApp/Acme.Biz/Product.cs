@@ -101,7 +101,7 @@ namespace Acme.Biz
         /// </summary>
         /// <param name="markupPercent">Percent used to mark up the cost.</param>
         /// <returns></returns>
-        public decimal CalculateSuggestedPrice(decimal markupPercent)
+        public OperationResultDecimal CalculateSuggestedPrice(decimal markupPercent)
         {
             var message = "";
             if (markupPercent <= 0m)
@@ -113,8 +113,10 @@ namespace Acme.Biz
                 message = "Below recommended markup percentage";
             }
             var value = this.Cost + (this.Cost * markupPercent / 100);
+            
+            var operationResultDecimal = new OperationResultDecimal(value, message);
 
-            return value;
+            return operationResultDecimal;
         }
             
 
