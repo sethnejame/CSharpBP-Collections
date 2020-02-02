@@ -43,9 +43,15 @@ namespace Acme.Biz
             return success;
         }
 
-        public T RetrieveValue<T>(string sql, T defaultValue)
+        public T RetrieveValue<T>(string sql, T defaultValue) where T : struct 
         {
             T value = defaultValue;
+            return value;
+        }
+        
+        public string RetrieveValue(string sql, string defaultValue) 
+        {
+            string value = defaultValue;
             return value;
         }
     }

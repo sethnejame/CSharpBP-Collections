@@ -33,7 +33,7 @@ namespace Acme.Biz.Tests
             var expected = "sandwich";
             
             //Act
-            var actual = repository.RetrieveValue<string>("poop", "sandwich");
+            var actual = repository.RetrieveValue("poop", "sandwich");
             
             //Assert
             Assert.AreEqual(expected, actual);

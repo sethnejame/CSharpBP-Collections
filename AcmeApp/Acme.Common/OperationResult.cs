@@ -6,7 +6,7 @@ namespace Acme.Common
     /// Provides a success flag and message 
     /// useful as a method return type.
     /// </summary>
-    public class OperationResult<T>
+    public class OperationResult<T> where T : struct
     {
         public OperationResult()
         {
