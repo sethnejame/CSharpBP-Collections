@@ -35,11 +35,7 @@ namespace Acme.Biz
             //     colorOptions[i] = colorOptions[i].ToLower();
             // }
 
-            var colorOptions = new List<string>();
-            colorOptions.Add("Mocha");
-            colorOptions.Add("Cream");
-            colorOptions.Add("Crimson");
-            colorOptions.Add("Azure");
+            var colorOptions = new List<string>() {"Mocha", "Cream", "Crimson", "Azure"};
             colorOptions.Insert(2, "Tangerine");
             colorOptions.Remove("Crimson");
         }
