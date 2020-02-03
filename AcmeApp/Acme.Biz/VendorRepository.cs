@@ -42,7 +42,16 @@ namespace Acme.Biz
                 vendors.Add(new Vendor() { VendorId = 1, CompanyName = "ABC", Email = "abc@abc.com"});
                 vendors.Add(new Vendor() { VendorId = 2, CompanyName = "Fake Doors", Email = "fakedoors@realfakedoors.com"});
             }
-            Console.WriteLine(vendors);
+
+            // foreach (var vendor in vendors)
+            // {
+            //     Console.WriteLine(vendor);
+            // }
+
+            for (int i = 0; i < vendors.Count; i++)
+            {
+                Console.WriteLine(vendors[i]);
+            }
 
             return vendors;
         }
