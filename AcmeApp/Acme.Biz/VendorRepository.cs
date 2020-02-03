@@ -81,5 +81,26 @@ namespace Acme.Biz
             string value = defaultValue;
             return value;
         }
+        
+        /// <summary>
+        /// Return a dictonary of vendors 
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, Vendor> RetrieveWithKeys()
+        {
+            var vendors = new Dictionary<string, Vendor>()
+            {
+                {
+                    "Acme Corp", new Vendor()
+                        {VendorId = 1, CompanyName = "Acme Corporation", Email = "acme@acorp.com"}
+                },
+                {
+                    "XYZ Inc", new Vendor()
+                        {VendorId = 2, CompanyName = "Xylophone Corp", Email = "ringaling@ding.com"}
+                }
+            };
+            Console.WriteLine(vendors);
+            return vendors;
+        }
     }
 }
