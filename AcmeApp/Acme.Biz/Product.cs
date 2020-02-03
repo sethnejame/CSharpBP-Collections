@@ -17,7 +17,7 @@ namespace Acme.Biz
         #region Constructors
         public Product()
         {
-            // Constructing Arrays w/ Looping Methods
+            #region Generic List w/ Looping Methods
             // string[] colorOptions = {"Red", "Green", "Blue", "Alpha"};
             //
             // foreach (var colorOption in colorOptions)
@@ -34,10 +34,20 @@ namespace Acme.Biz
             // {
             //     colorOptions[i] = colorOptions[i].ToLower();
             // }
+            // var colorOptions = new List<string>() {"Mocha", "Cream", "Crimson", "Azure"};
+            // colorOptions.Insert(2, "Tangerine");
+            // colorOptions.Remove("Crimson");
+            #endregion
+            
+            #region Dictionary w/ Looping Methods
 
-            var colorOptions = new List<string>() {"Mocha", "Cream", "Crimson", "Azure"};
-            colorOptions.Insert(2, "Tangerine");
-            colorOptions.Remove("Crimson");
+            var states = new Dictionary<string, string>()
+            {
+                {"TX", "Texas"},
+                {"MI", "Michigan"},
+                {"FL", "Florida"},
+            };
+            #endregion
         }
         public Product(int productId,
                         string productName,
