@@ -99,19 +99,35 @@ namespace Acme.Biz
                         {VendorId = 2, CompanyName = "Xylophone Corp", Email = "ringaling@ding.com"}
                 }
             };
-            Console.WriteLine(vendors);
 
-            if (vendors.ContainsKey("Acme Corp"))
+            foreach (var element in vendors)
             {
-                Console.WriteLine(vendors["Acme Corp"]);
+                Console.WriteLine("Key: " + element.Key + "," + "Value: " + element.Value);
             }
 
-            Vendor vendor;
-            if (vendors.TryGetValue("Acme Corp", out vendor))
-            {
-                Console.WriteLine(vendor);
-            }
-            return vendors;
+            // foreach (var vendorsValue in vendors.Values)
+            // {
+            //     Console.WriteLine(vendorsValue);
+            // }
+            //
+            // foreach (var companyName in vendors.Keys)
+            // {
+            //     Console.Write(companyName);
+            // }
+            //
+            // Console.WriteLine(vendors["XYZ Inc"]);
+            //
+            // if (vendors.ContainsKey("Acme Corp"))
+            // {
+            //     Console.WriteLine(vendors["Acme Corp"]);
+            // }
+            //
+            // Vendor vendor;
+            // if (vendors.TryGetValue("Acme Corp", out vendor))
+            // {
+            //     Console.WriteLine(vendor);
+            // }
+            // return vendors;
         }
     }
 }
