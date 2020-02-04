@@ -31,7 +31,23 @@ namespace Acme.Biz
         }
 
         /// <summary>
-        /// Retrieve all of the approved vendors
+        /// Retrieves all approved vendors (in array) from DB
+        /// </summary>
+        /// <returns></returns>
+        public Vendor[] RetrieveArray()
+        {
+            var vendors = new Vendor[2]
+            {
+                new Vendor()
+                    {VendorId = 42, Email = "bernie@cat.com", CompanyName = "Cat Company"},
+                new Vendor()
+                    {VendorId = 33, Email = "natalie@nejame.com", CompanyName = "NeJame & Co"}
+            };
+            return vendors;
+        }
+
+        /// <summary>
+        /// Retrieve all of the approved vendors (in a List of type Vendor)
         /// </summary>
         /// <returns></returns>
         public List<Vendor> Retrieve()
@@ -69,13 +85,21 @@ namespace Acme.Biz
 
             return success;
         }
-
+        
+        /// <summary>
+        /// Retrieves a generic value from the DB
+        /// </summary>
+        /// <returns></returns>
         public T RetrieveValue<T>(string sql, T defaultValue) where T : struct 
         {
             T value = defaultValue;
             return value;
         }
         
+        /// <summary>
+        /// Overload added to enable retrieving string (reference type) from DB
+        /// </summary>
+        /// <returns></returns>
         public string RetrieveValue(string sql, string defaultValue) 
         {
             string value = defaultValue;
@@ -83,11 +107,12 @@ namespace Acme.Biz
         }
         
         /// <summary>
-        /// Return a dictonary of vendors 
+        /// Retrieves all approved vendors (as a dictionary) 
         /// </summary>
         /// <returns></returns>
         public Dictionary<string, Vendor> RetrieveWithKeys()
         {
+            #region Dictionary w/ Iteration and Access Methods
             var vendors = new Dictionary<string, Vendor>()
             {
                 {
@@ -127,7 +152,10 @@ namespace Acme.Biz
             // {
             //     Console.WriteLine(vendor);
             // }
-            // return vendors;
+            #endregion
+            
+            return vendors;
+            
         }
     }
 }
