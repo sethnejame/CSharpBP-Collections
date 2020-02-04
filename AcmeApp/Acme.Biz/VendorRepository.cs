@@ -100,6 +100,17 @@ namespace Acme.Biz
                 }
             };
             Console.WriteLine(vendors);
+
+            if (vendors.ContainsKey("Acme Corp"))
+            {
+                Console.WriteLine(vendors["Acme Corp"]);
+            }
+
+            Vendor vendor;
+            if (vendors.TryGetValue("Acme Corp", out vendor))
+            {
+                Console.WriteLine(vendor);
+            }
             return vendors;
         }
     }
