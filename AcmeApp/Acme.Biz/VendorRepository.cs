@@ -56,6 +56,21 @@ namespace Acme.Biz
             return vendors;
         }
 
+        ///<summary>
+        /// Retrieves all approved vendors, one at time
+        /// </summary>
+        public IEnumerable<Vendor> RetrieveWithIterator()
+        {
+            // Get the data from the database (will return 'vendors')
+            this.Retrieve();
+
+            foreach (var vendor in vendors)
+            {
+                Console.WriteLine($"Vendor ID: {vendor.VendorId}");
+                yield return vendor;
+            }
+        }
+
         /// <summary>
         /// Save data for one vendor.
         /// </summary>

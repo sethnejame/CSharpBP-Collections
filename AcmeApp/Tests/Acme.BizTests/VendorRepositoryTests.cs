@@ -54,5 +54,27 @@ namespace Acme.Biz.Tests
             //Assert
             CollectionAssert.AreEqual(expected, actual.ToList());
         }
+
+        [TestMethod()]
+        public void RetrieveWithIteratorTest()
+        {
+            // Arrange
+             var repository = new VendorRepository();
+                        var expected = new List<Vendor>();
+                        expected.Add(new Vendor() { VendorId = 1, CompanyName = "ABC", Email = "abc@abc.com"});
+                        expected.Add(new Vendor() { VendorId = 2, CompanyName = "Fake Doors", Email = "fakedoors@realfakedoors.com"});
+                        
+            // Act
+            var vendorIterator = repository.RetrieveWithIterator();
+            foreach (var vendor in vendorIterator)
+            {
+                Console.WriteLine(vendor);
+            }
+
+            var actual = vendorIterator.ToList();
+
+            // Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }
