@@ -34,7 +34,7 @@ namespace Acme.Biz
         /// Retrieve all of the approved vendors (in any collection type)
         /// </summary>
         /// <returns></returns>
-        public ICollection<Vendor> Retrieve()
+        public IEnumerable<Vendor> Retrieve()
         {
             if (vendors == null)
             {

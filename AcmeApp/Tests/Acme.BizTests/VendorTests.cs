@@ -168,12 +168,13 @@ namespace Acme.Biz.Tests
         {
             //Arrange
             var vendorRepository = new VendorRepository();
-            var vendors = vendorRepository.Retrieve();
+            var vendorsCollection = vendorRepository.Retrieve();
             var expected = new List<string>()
             {
                 "Message sent: Important message for: Cat Company",
                 "Message sent: Important message for: NeJame & Co"
             };
+            var vendors = vendorsCollection.ToArray();
             
             //Act
             var actual = Vendor.SendEmail(vendors, "Test Message");
