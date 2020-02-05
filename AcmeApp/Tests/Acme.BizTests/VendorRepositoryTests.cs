@@ -76,5 +76,31 @@ namespace Acme.Biz.Tests
             // Assert
             CollectionAssert.AreEqual(expected, actual);
         }
+        
+        [TestMethod()]
+        public void RetrieveAllTest()
+        {
+            // Arrange
+            var repository = new VendorRepository();
+            var expected = new List<Vendor>
+            {
+                {new Vendor() {VendorId = 3, CompanyName = "Berni Cat Co", Email = "bernie@cat.com"}},
+                {new Vendor() {VendorId = 4, CompanyName = "Cat Charlie Inc", Email = "charlie@friend.com"}},
+                {new Vendor() {VendorId = 9, CompanyName = "Hogwarts Magic Cat Co", Email = "magic@isfake.com"}},
+            };
+                        
+            // Act
+            var vendors = repository.RetrieveAll();
+
+            // var vendorQuery = from v in vendors
+            //     where v.CompanyName.Contains("Cat")
+            //     select v;
+
+            var vendorQuery = vendors.Where(v => v.CompanyName.Contains("Cat"))
+                .OrderBy(v => v.CompanyName);
+            
+            // Assert
+            CollectionAssert.AreEqual(expected, vendorQuery.ToList());
+        }
     }
 }

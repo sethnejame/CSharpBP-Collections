@@ -115,13 +115,13 @@ namespace Acme.Biz
             {
                 {new Vendor() {VendorId = 1, CompanyName = "ABC", Email = "abc@abc.com"}},
                 {new Vendor() {VendorId = 2, CompanyName = "Fake Doors", Email = "fakedoors@realfakedoors.com"}},
-                {new Vendor() {VendorId = 3, CompanyName = "Berni Co", Email = "bernie@cat.com"}},
-                {new Vendor() {VendorId = 4, CompanyName = "Charlie Inc", Email = "charlie@friend.com"}},
+                {new Vendor() {VendorId = 3, CompanyName = "Berni Cat Co", Email = "bernie@cat.com"}},
+                {new Vendor() {VendorId = 4, CompanyName = "Cat Charlie Inc", Email = "charlie@friend.com"}},
                 {new Vendor() {VendorId = 5, CompanyName = "Natalie AB", Email = "nat@wifey.com"}},
                 {new Vendor() {VendorId = 6, CompanyName = "Worldfavor", Email = "seth@worldfavor.com"}},
                 {new Vendor() {VendorId = 7, CompanyName = "Mondido", Email = "seth@mondido.com"}},
                 {new Vendor() {VendorId = 8, CompanyName = "Acme Corp", Email = "acme@corp.com"}},
-                {new Vendor() {VendorId = 9, CompanyName = "Hogwarts Co", Email = "magic@isfake.com"}},
+                {new Vendor() {VendorId = 9, CompanyName = "Hogwarts Magic Cat Co", Email = "magic@isfake.com"}},
                 {new Vendor() {VendorId = 10, CompanyName = "Monsters Inc", Email = "monsters@arereal.com"}},
 
             };
