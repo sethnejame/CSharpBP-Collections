@@ -54,6 +54,7 @@ namespace Acme.Biz.Tests
             //Assert
             CollectionAssert.AreEqual(expected, actual);
         }
+
         [TestMethod()]
         public void RetrieveWithKeysTest()
         {
@@ -70,10 +71,10 @@ namespace Acme.Biz.Tests
                         {VendorId = 2, CompanyName = "Xylophone Corp", Email = "ringaling@ding.com"}
                 }
             };
-            
+
             //Act
             var actual = repository.RetrieveWithKeys();
-            
+
             //Assert
             CollectionAssert.AreEqual(expected, actual);
         }
