@@ -31,26 +31,10 @@ namespace Acme.Biz
         }
 
         /// <summary>
-        /// Retrieves all approved vendors (in array) from DB
+        /// Retrieve all of the approved vendors (in any collection type)
         /// </summary>
         /// <returns></returns>
-        public Vendor[] RetrieveArray()
-        {
-            var vendors = new Vendor[2]
-            {
-                new Vendor()
-                    {VendorId = 42, Email = "bernie@cat.com", CompanyName = "Cat Company"},
-                new Vendor()
-                    {VendorId = 33, Email = "natalie@nejame.com", CompanyName = "NeJame & Co"}
-            };
-            return vendors;
-        }
-
-        /// <summary>
-        /// Retrieve all of the approved vendors (in a List of type Vendor)
-        /// </summary>
-        /// <returns></returns>
-        public List<Vendor> Retrieve()
+        public ICollection<Vendor> Retrieve()
         {
             if (vendors == null)
             {
@@ -104,58 +88,6 @@ namespace Acme.Biz
         {
             string value = defaultValue;
             return value;
-        }
-        
-        /// <summary>
-        /// Retrieves all approved vendors (as a dictionary) 
-        /// </summary>
-        /// <returns></returns>
-        public Dictionary<string, Vendor> RetrieveWithKeys()
-        {
-            #region Dictionary w/ Iteration and Access Methods
-            var vendors = new Dictionary<string, Vendor>()
-            {
-                {
-                    "Acme Corp", new Vendor()
-                        {VendorId = 1, CompanyName = "Acme Corporation", Email = "acme@acorp.com"}
-                },
-                {
-                    "XYZ Inc", new Vendor()
-                        {VendorId = 2, CompanyName = "Xylophone Corp", Email = "ringaling@ding.com"}
-                }
-            };
-
-            foreach (var element in vendors)
-            {
-                Console.WriteLine("Key: " + element.Key + "," + "Value: " + element.Value);
-            }
-
-            // foreach (var vendorsValue in vendors.Values)
-            // {
-            //     Console.WriteLine(vendorsValue);
-            // }
-            //
-            // foreach (var companyName in vendors.Keys)
-            // {
-            //     Console.Write(companyName);
-            // }
-            //
-            // Console.WriteLine(vendors["XYZ Inc"]);
-            //
-            // if (vendors.ContainsKey("Acme Corp"))
-            // {
-            //     Console.WriteLine(vendors["Acme Corp"]);
-            // }
-            //
-            // Vendor vendor;
-            // if (vendors.TryGetValue("Acme Corp", out vendor))
-            // {
-            //     Console.WriteLine(vendor);
-            // }
-            #endregion
-            
-            return vendors;
-            
         }
     }
 }
